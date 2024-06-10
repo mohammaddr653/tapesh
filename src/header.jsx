@@ -54,8 +54,8 @@ const Header = () => {
                         <div className="container">
                             <div className="row">
                                 <div className="col-1 header-right">
-                                    <a href="digikala.com">
-                                        <img src="images/logot.png" width={"100px"} alt="k"/>
+                                    <a href="https://digikala.com">
+                                        <img src="tapesh/images/logot.png" width={"100px"} alt="k"/>
                                     </a>
                                 </div>
                                 <div className="col header-left">
