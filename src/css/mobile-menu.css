@@ -1,0 +1,129 @@
+/* start mobile menu */
+
+div#mobile-menu{
+    background-color: white;
+    width: 85vw;
+    height: 100vh;
+    left: -85vw;
+    top: 0;
+    z-index:3;
+    /* display: none; */
+    position: absolute;
+    transition: all .5s;
+}
+div#mobile-menu.mobile-menu-show{
+    /* left: 0vw; */
+    left: 0;
+
+    transition: all .5s;
+
+}
+div#bg-dark{
+    background-color: #00000099;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    z-index: 2;
+    display: none;
+}
+div#bg-dark.bg-dark-show{
+    display: block;
+}
+div#mobile-menu div.close-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding: 20px;
+}
+div#mobile-menu div.close-button svg{
+    cursor: pointer;
+
+}
+div#mobile-menu div.mob-menu{
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 10px;
+    padding: 0 30px;
+}
+div#mobile-menu div.mob-menu div{
+    /* background-color: pink; */
+    width: 100%;
+}
+div#mobile-menu div.mob-menu a.mob-menu-links{
+    color: #333;
+    padding: 10px;
+    width: 100%;
+    display: block;
+    font-family: "iransans";
+    font-weight: 300;
+
+    /* background-color: green; */
+}
+div#mobile-menu div.mob-search-container{
+    background-color:white;
+    padding: 30px;
+}
+div#mobile-menu div.mob-search-container div.header-search-container>div.search-result-box div.search-box-main{
+    max-height: 200px;
+    overflow-y: scroll;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-top: 10px;
+
+}
+
+div#mobile-menu div.mob-search-container div.header-search-container>div.search-box{
+    background-color:white;
+    /* border: 1px solid black; */
+    box-shadow: 0 0 2px .5px #999;
+
+}
+
+div#mobile-menu div.mob-search-container div.header-search-container>div.search-result-box{
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    /* min-height: 20px; */
+    background-color: whitesmoke;
+    box-shadow: 0 0 2px .5px #999;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+
+
+}
+
+
+div#mobile-menu div.mob-account-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+    gap: 10px;
+}
+div#mobile-menu div.mob-account-container>span{
+    padding: 5px 20px;
+    /* background-color: whitesmoke; */
+    font-family: 'iransans';
+    font-size: 17px;
+    font-weight: 300;
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* finish mobile menu */ 
