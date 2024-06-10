@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/tapesh/static/css/main.4986637d.css",
+    "main.js": "/tapesh/static/js/main.1341575b.js",
+    "static/media/iStock-1179610553-1-e1646406929549.jpg": "/tapesh/static/media/iStock-1179610553-1-e1646406929549.d832f45bbf9c29773b0e.jpg",
+    "static/media/IRANSansWeb(FaNum)_Light.ttf": "/tapesh/static/media/IRANSansWeb(FaNum)_Light.3e99a4d54d76ef687a4f.ttf",
+    "static/media/IRANSansWeb(FaNum)_Medium.ttf": "/tapesh/static/media/IRANSansWeb(FaNum)_Medium.ba77cad06e41efd16bf0.ttf",
+    "static/media/IRANSansWeb(FaNum)_Bold.ttf": "/tapesh/static/media/IRANSansWeb(FaNum)_Bold.40ce5860f4b35793bc06.ttf",
+    "static/media/IRANSansWeb(FaNum)_UltraLight.ttf": "/tapesh/static/media/IRANSansWeb(FaNum)_UltraLight.debced95498e985cf493.ttf",
+    "index.html": "/tapesh/index.html",
+    "main.4986637d.css.map": "/tapesh/static/css/main.4986637d.css.map",
+    "main.1341575b.js.map": "/tapesh/static/js/main.1341575b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4986637d.css",
+    "static/js/main.1341575b.js"
+  ]
+}
