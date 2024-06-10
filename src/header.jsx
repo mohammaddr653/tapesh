@@ -29,7 +29,7 @@ const Header = () => {
 
     useEffect(()=>{
         stateChanges();
-    },[mobIconClicked,loginFormState]);
+    },[mobIconClicked,loginFormState,registerFormState]);
 
     function stateChanges(){
         if(mobIconClicked===true || loginFormState===true || registerFormState===true){
@@ -91,7 +91,6 @@ const Header = () => {
                             <h3>ثبت نام</h3>
                             <RegisterForm></RegisterForm>
                             <div className={registerFormState ? "dark-win dark-win-show" : "dark-win"} onClick={function(){setRegisterFormState(false)}}></div>
-
                         </div>
                     </div>  
                 </header>
