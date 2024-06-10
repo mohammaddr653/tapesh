@@ -55,7 +55,7 @@ const Header = () => {
                             <div className="row">
                                 <div className="col-1 header-right">
                                     <a href="https://digikala.com">
-                                        <img src="../images/logot.png" width={"100px"} alt="k"/>
+                                        <img src="images/logot.png" width={"100px"} alt="k"/>
                                     </a>
                                 </div>
                                 <div className="col header-left">
