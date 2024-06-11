@@ -1,0 +1,63 @@
+div#home-main-trust-container>div.container{
+    /* background-color: red; */
+    padding: 0;
+}
+div#home-main-trust-container div.trust-box{
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* width: 500px; */
+    gap: 20px;
+    padding: 20px 0;
+    flex-wrap: wrap;
+}
+div#home-main-trust-container div.trust-cart{
+    /* width: 200px; */
+    background-color: white;
+    align-self: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 20px;
+    color: #333;
+    font-family: 'iransans';
+    font-weight: 300;
+    /* height:fit-content ; */
+    /* padding: 10px 10px; */
+    font-size: 16px;
+    /* background-color: red; */
+    text-shadow: none;
+    text-align: justify;
+    /* width: 100%; */
+    flex: 1 10rem;
+    /* max-height: 200px; */
+    border-radius: 5px;
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.06);
+    /* outline: 1px solid #7C4FE0; */
+    color: #555;
+    /* opacity: .8; */
+
+}
+div#home-main-trust-container div.trust-cart>div.cart-img>svg{
+    width: 40px;
+    height: 40px;
+}
+div#home-main-trust-container div.trust-cart>div.cart-title{
+    padding: 20px 0;
+
+}
+div#home-main-trust-container div.trust-cart>div.cart-content{
+
+    font-size: 14px;
+    font-weight: 200;
+    color: #666;
+}
+@media only screen and (max-width: 579px) {
+    div#home-main-trust-container div.trust-box{
+        padding: 20px 20px;
+
+    }
+}

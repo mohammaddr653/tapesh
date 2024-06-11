@@ -4,7 +4,7 @@ div#mobile-menu{
     background-color: white;
     width: 85vw;
     height: 100vh;
-    left: -85vw;
+    left: -95vw;
     top: 0;
     z-index:3;
     /* display: none; */
@@ -19,7 +19,7 @@ div#mobile-menu.mobile-menu-show{
 
 }
 div#bg-dark{
-    background-color: #00000099;
+    background-color: #000000cf;
     position: absolute;
     top: 0;
     width: 100vw;
@@ -34,11 +34,15 @@ div#bg-dark.bg-dark-show{
 div#mobile-menu div.close-button{
     display: flex;
     flex-direction: row;
-    justify-content: end;
-    padding: 20px;
+    justify-content: start;
+    padding: 0px;
+    position: absolute;
+    top: 27px ;
+    right: -50px;
 }
 div#mobile-menu div.close-button svg{
     cursor: pointer;
+    fill: white;
 
 }
 div#mobile-menu div.mob-menu{

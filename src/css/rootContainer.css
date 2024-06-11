@@ -5,6 +5,7 @@
 }
 body{
     overflow-x: hidden;
+    background-color: whitesmoke;
 }
 a{
     text-decoration: none;
