@@ -3,23 +3,16 @@ import './css/home-main-dr-slider.css';
 import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import { useContext } from 'react';
+import DoctorsInfoContext from './context/doctorsInfo';
+
 const HomeMainDrSlider = () => {
-    const [doctors, setDoctors] = useState([]);
-    let [sliderShowDr, setSliderShowDr] = useState([]);
+    const doctorsInfoContext=useContext(DoctorsInfoContext);
+    
 
     useEffect(() => {
-        async function getData(){
-            const response = await axios.get("doctors.json");
-            console.log(response.data);
-            setDoctors(response.data);
-            setSliderShowDr(response.data[0])
-
-        };
-        getData();
-    },[]);
-    useEffect(() => {
-        console.log(sliderShowDr);
-    },[sliderShowDr]);
+        console.log(doctorsInfoContext.sliderShowDr);
+    },[doctorsInfoContext.sliderShowDr]);
 
     // function getClickedDr(x){
     //     console.log("d");
@@ -34,11 +27,11 @@ const HomeMainDrSlider = () => {
                 <div className="row dr-slider-content w-100 m-0">
                     <div className="dr-slider-list">
                         <ul>
-                            {doctors.map((item,index)=>{
+                            {doctorsInfoContext.doctors.map((item,index)=>{
                                 if(item.slider==="true"){
                                     return(
-                                        <li key={index} className={sliderShowDr.id===item.id?"show":null} onClick={function(){
-                                            setSliderShowDr(item);
+                                        <li key={index} className={doctorsInfoContext.sliderShowDr.id===item.id?"show":null} onClick={function(){
+                                            doctorsInfoContext.setSliderShowDr(item);
                                         }}>
                                             {item.name}
                                         </li>
@@ -48,7 +41,7 @@ const HomeMainDrSlider = () => {
                         </ul>
                     </div>
                     <div className="dr-slider p-0">
-                        <img src={sliderShowDr.img} alt="2" />
+                        <img src={doctorsInfoContext.sliderShowDr.img} alt="2" />
                     </div>
                 </div>
             </div>

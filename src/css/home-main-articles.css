@@ -1,0 +1,7 @@
+div#home-main-articles{
+    background-color: red;
+}
+div#home-main-articles>div.container{
+    background-color: yellow;
+    padding: 0;
+}

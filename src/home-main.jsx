@@ -3,6 +3,7 @@ import './css/home-main.css';
 import HomeMainBanner from './home-main-banner';
 import HomeMainTrust from './home-main-trust';
 import HomeMainDrSlider from './home-main-dr-slider';
+import HomeMainArticles from './home-main-articles';
 const HomeMain = () => {
     return ( 
         <main>
@@ -10,6 +11,7 @@ const HomeMain = () => {
                 <HomeMainBanner></HomeMainBanner>
                 <HomeMainTrust></HomeMainTrust>
                 <HomeMainDrSlider></HomeMainDrSlider>
+                <HomeMainArticles></HomeMainArticles>
             </div>
         </main>
     );
