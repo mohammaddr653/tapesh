@@ -22,7 +22,9 @@
       "name": "دکتر محمد کریمی",
       "location": "درمانگاه امیرالمومنین",
       "proffesion":"داخلی",
-      "slider":"false"
+      "slider":"false",
+      "img":"images/dr2.jpg"
+
 
     },
     {
@@ -40,7 +42,9 @@
       "name": "دکتر فاطمه بریسم",
       "location": "درمانگاه امیرالمومنین",
       "proffesion":"جراح کلیه و مجاری ادراری",
-      "slider":"false"
+      "slider":"false",
+      "img":"images/dr2.jpg"
+
 
     },
     {
@@ -58,7 +62,9 @@
       "name": "دکتر هاجر عباسی",
       "location": "درمانگاه امیرالمومنین",
       "proffesion":"جراح کلیه و مجاری ادراری",
-      "slider":"false"
+      "slider":"false",
+      "img":"images/dr2.jpg"
+
 
     },
     {
@@ -66,7 +72,9 @@
       "name": "دکتر مرتضی عبدالخانی",
       "location": "درمانگاه امیرالمومنین",
       "proffesion":"جراح کلیه و مجاری ادراری",
-      "slider":"false"
+      "slider":"false",
+      "img":"images/dr2.jpg"
+
 
     }
       

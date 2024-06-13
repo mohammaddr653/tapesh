@@ -17,7 +17,7 @@ const HomeMainDrSlider = () => {
     // function getClickedDr(x){
     //     console.log("d");
     // }
-    return (
+        return (
         <div id="home-main-dr-slider-container">
             <div className="container">
                 <div className='row dr-slider-title w-100 p-0 m-0'>
@@ -39,6 +39,9 @@ const HomeMainDrSlider = () => {
                                 }
                             })}
                         </ul>
+                        <div className="promotes bg-danger">
+                            
+                        </div>
                     </div>
                     <div className="dr-slider p-0">
                         <img src={doctorsInfoContext.sliderShowDr.img} alt="2" />

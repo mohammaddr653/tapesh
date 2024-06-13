@@ -47,19 +47,34 @@ div#home-main-dr-slider-container>div.container div.dr-slider-content{
     align-items: start;
     gap: 20px;
     padding-top: 20px;
+    align-self: normal;
+    position: relative;
+    /* height: 500px; */
+    overflow: hidden;
+
     /* flex-wrap: nowrap; */
 }
 div#home-main-dr-slider-container>div.container div.dr-slider-content>div.dr-slider-list{
     /* background-color: yellow; */
     /* border-radius: 5px; */
-    border-right: 2px solid red;
     /* box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.06); */
     flex: 1;
     padding: 0;
+    display: flex;
+    /* height: 100%;
+    min-height: 100%; */
+    /* float: right; */
+    flex-direction: column;
+    justify-content: start;
+    align-items: right;
+
 
 }
 div#home-main-dr-slider-container>div.container div.dr-slider-content>div.dr-slider-list>ul{
     /* background-color: blue; */
+    /* border-right: 2px solid #7C4FE0; */
+    /* padding-right: 5px; */
+
     margin: 0;
     padding: 0;
     list-style: none;
@@ -88,6 +103,11 @@ div#home-main-dr-slider-container>div.container div.dr-slider-content>div.dr-sli
 div#home-main-dr-slider-container>div.container div.dr-slider-content>div.dr-slider-list>ul>li.show{
     background-color: white;
 
+}
+
+div#home-main-dr-slider-container>div.container div.dr-slider-content>div.dr-slider-list div.promotes{
+    margin-top: 20px;
+    
 }
 
 div#home-main-dr-slider-container>div.container div.dr-slider-content>div.dr-slider{
@@ -124,7 +144,9 @@ div#home-main-dr-slider-container>div.container div.dr-slider-content>div.dr-sli
     div#home-main-dr-slider-container>div.container div.dr-slider-content>div.dr-slider-list>ul{
         /* background-color: blue; */
         margin: 0;
-        padding: 0 20px;
+        /* padding-right: 5px; */
+
+        padding: 0;
         list-style: none;
         display: flex;
         flex-direction: row;
@@ -148,11 +170,10 @@ div#home-main-dr-slider-container>div.container div.dr-slider-content>div.dr-sli
     div#home-main-dr-slider-container>div.container div.dr-slider-content>div.dr-slider-list{
         /* background-color: yellow; */
         /* border-radius: 5px; */
-        border-right: 2px solid red;
+        /* border-right: 2px solid red; */
         /* box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.06); */
         flex: 1;
         padding: 0;
-        padding-right: 5px;
     
     }
     
