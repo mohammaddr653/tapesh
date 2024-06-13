@@ -18,7 +18,16 @@ const App = () => {
         console.log(response.data);
         console.log("hh");
         setDoctors(response.data);
-        setSliderShowDr(response.data[0])
+        // setSliderShowDr(response.data[0].img);
+        let a=[];
+        for(let n of response.data){
+          if(n.slider==="true"){
+            console.log(n.img);
+            a.push(n);
+            console.log(a);
+          }
+        }
+        setSliderShowDr(a);
 
     };
     getData();

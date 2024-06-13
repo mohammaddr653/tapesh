@@ -8,7 +8,19 @@ import DoctorsInfoContext from './context/doctorsInfo';
 
 const HomeMainDrSlider = () => {
     const doctorsInfoContext=useContext(DoctorsInfoContext);
+    let [sliderShowDrImg, setSliderShowDrImg] = useState([]);
+    let [currentSliderShowDrImg, setCurrentSliderShowDrImg] = useState();
+
+    let b =[]
     
+    useEffect(() => {
+        for(let x of doctorsInfoContext.sliderShowDr){
+            b.push(x.img);
+        }
+        setSliderShowDrImg(b);
+        setCurrentSliderShowDrImg(b[0]);
+    },[doctorsInfoContext.sliderShowDr]);
+
 
     useEffect(() => {
         console.log(doctorsInfoContext.sliderShowDr);
@@ -17,7 +29,17 @@ const HomeMainDrSlider = () => {
     // function getClickedDr(x){
     //     console.log("d");
     // }
-        return (
+    function jj(e){
+        for(let r of sliderShowDrImg){
+            if(r===e){
+                console.log(r);
+                setCurrentSliderShowDrImg(r);
+            }
+        }
+        // alert("ff");
+        
+    }
+    return (
         <div id="home-main-dr-slider-container">
             <div className="container">
                 <div className='row dr-slider-title w-100 p-0 m-0'>
@@ -27,11 +49,12 @@ const HomeMainDrSlider = () => {
                 <div className="row dr-slider-content w-100 m-0">
                     <div className="dr-slider-list">
                         <ul>
-                            {doctorsInfoContext.doctors.map((item,index)=>{
+                            {doctorsInfoContext.sliderShowDr.map((item,index)=>{
                                 if(item.slider==="true"){
                                     return(
-                                        <li key={index} className={doctorsInfoContext.sliderShowDr.id===item.id?"show":null} onClick={function(){
-                                            doctorsInfoContext.setSliderShowDr(item);
+                                        <li key={index} className={currentSliderShowDrImg===item.img?"show":null} onClick={function(){
+                                            // doctorsInfoContext.setSliderShowDr(item);
+                                            jj(item.img);
                                         }}>
                                             {item.name}
                                         </li>
@@ -44,7 +67,8 @@ const HomeMainDrSlider = () => {
                         </div>
                     </div>
                     <div className="dr-slider p-0">
-                        <img src={doctorsInfoContext.sliderShowDr.img} alt="2" />
+                        <img src={currentSliderShowDrImg} alt="2" />
+                        {/* {console.log(doctorsInfoContext.sliderShowDr)} */}
                     </div>
                 </div>
             </div>
