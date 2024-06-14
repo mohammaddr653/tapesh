@@ -122,6 +122,26 @@ div#home-main-doctors-arc>div.container>div.see-all-row a{
 
 
 
+@media only screen and (max-width: 1170px) {
+    div#home-main-doctors-arc>div.container>div.row{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 632px) {
+    div#home-main-doctors-arc>div.container>div.row{
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+
+}
+
 @media only screen and (max-width: 579px) {
     div#home-main-doctors-arc>div.container{
         /* background-color: yellow; */

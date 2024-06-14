@@ -10,12 +10,14 @@ div#home-main-dr-slider-container>div.container div.dr-slider-title{
     /* background-color: green; */
     display: flex;
     flex-direction: row;
+    margin: 0;
     justify-content: right;
     align-items: center;
     color: #333;
     font-family: 'iransans';
     font-weight: 300;
     height:fit-content ;
+    margin-bottom: 20px;
     padding: 10px 10px;
     font-size: 15px;
     /* background-color: red; */
@@ -46,7 +48,6 @@ div#home-main-dr-slider-container>div.container div.dr-slider-content{
     justify-content: center;
     align-items: start;
     gap: 20px;
-    padding-top: 20px;
     align-self: normal;
     position: relative;
     /* height: 500px; */
@@ -133,7 +134,7 @@ div#home-main-dr-slider-container>div.container div.dr-slider-content>div.dr-sli
 @media only screen and (max-width: 770px) {
     div#home-main-dr-slider-container>div.container div.dr-slider-content{
         /* background-color: red; */
-        display: flex;
+        display: none;
         flex-direction: column;
         justify-content: center;
         align-items: center;
