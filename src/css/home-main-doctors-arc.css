@@ -18,6 +18,7 @@ div#home-main-doctors-arc>div.container div.card{
     position: relative;
     color: #333;
     font-family: 'iransans';
+    overflow: hidden;
     font-weight: 300;
     /* height:fit-content ; */
     /* padding: 10px 10px; */
@@ -54,4 +55,89 @@ div#home-main-doctors-arc>div.container div.card img.card-img{
     aspect-ratio: 293/195;
     margin-bottom: 20px;
 
+}
+div#home-main-doctors-arc>div.container div.card div.card-explain{
+    /* background-color: red; */
+    padding: 10px;
+    margin-top: 20px;
+}
+div#home-main-doctors-arc>div.container div.card div.card-explain>p{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    gap: 5px;
+    font-size: 13px;
+    color: #555;
+    font-weight: 300;
+
+}
+div#home-main-doctors-arc>div.container div.card a.card-link{
+    display: block;
+    position: absolute;
+    background-color: #3333336d;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all .3s;
+
+}
+div#home-main-doctors-arc>div.container div.card:hover a.card-link{
+
+    opacity: 1;
+    transition: all .3s;
+}
+div#home-main-doctors-arc>div.container div.card a.card-link>span{
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    position: absolute;
+    background-color: white;
+    border-radius: 0 10px 10px 0;
+    left: 0;
+    top: 50%;
+    margin-top: -50px;
+}
+div#home-main-doctors-arc>div.container div.see-all-row{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-top: 40px;
+}
+div#home-main-doctors-arc>div.container>div.see-all-row a{
+    width: fit-content;
+    padding: 10px 20px;
+    background-color: #7C4FE0;
+    border-radius: 5px;
+    font-family: "iransans";
+    font-size: 16px;
+    color: whitesmoke;
+    font-weight: 300;
+
+
+}
+
+
+
+@media only screen and (max-width: 579px) {
+    div#home-main-doctors-arc>div.container{
+        /* background-color: yellow; */
+        padding: 0 10px;
+    }
+    div#home-main-doctors-arc>div.container>div.row{
+        display: grid;
+        grid-template-columns: auto;
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+    div#home-main-doctors-arc>div.container div.card:hover a.card-link{
+
+        opacity: 0;
+        transition: all .3s;
+    }
+    
+    
 }
