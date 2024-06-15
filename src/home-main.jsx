@@ -5,6 +5,7 @@ import HomeMainTrust from './home-main-trust';
 import HomeMainDrSlider from './home-main-dr-slider';
 import HomeMainDoctorsArc from './home-main-doctors-arc';
 import HomeMainHowItWorks from './home-main-how-it-works';
+import HomeMainTapeshFacilities from './home-main-tapesh-facilities';
 const HomeMain = () => {
     return ( 
         <main>
@@ -14,6 +15,7 @@ const HomeMain = () => {
                 <HomeMainDrSlider></HomeMainDrSlider>
                 <HomeMainDoctorsArc></HomeMainDoctorsArc>
                 <HomeMainHowItWorks></HomeMainHowItWorks>
+                <HomeMainTapeshFacilities></HomeMainTapeshFacilities>
             </div>
         </main>
     );

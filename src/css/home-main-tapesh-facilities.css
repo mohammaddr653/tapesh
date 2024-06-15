@@ -1,0 +1,59 @@
+div#home-main-tapesh-facilities{
+    /* background-color: red; */
+    margin-top: 100px;
+}
+div#home-main-tapesh-facilities>div.container{
+    /* background-color: yellow; */
+}
+div#home-main-tapesh-facilities>div.container div.facilities-title{
+
+    /* background-color: green; */
+    display: flex;
+    /* height: 100px; */
+    flex-direction: row;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: #333;
+    font-family: 'iransans';
+    font-weight: 300;
+    margin-bottom: 20px;
+    padding: 10px 10px;
+    font-size: 15px;
+    /* background-color: red; */
+    text-shadow: none;
+    flex-wrap: nowrap;
+    overflow: hidden;
+
+}
+div#home-main-tapesh-facilities>div.container div.facilities-title>h3{
+    width: fit-content;
+    margin: 0;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 300;
+    background-color: whitesmoke;
+    z-index: 2;
+    
+
+}
+div#home-main-tapesh-facilities>div.container div.facilities-title>hr{
+    margin: 0;
+    position: absolute;
+
+    /* z-index: 1; */
+}
+
+
+
+@media only screen and (max-width: 632px) {
+    
+}
+@media only screen and (max-width: 579px) {
+    div#home-main-tapesh-facilities>div.container{
+        /* background-color: yellow; */
+        padding: 0 20px;
+    }
+}
+

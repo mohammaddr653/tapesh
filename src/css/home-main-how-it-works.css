@@ -83,11 +83,15 @@ div#home-main-how-it-works>div.container div.works-body div.works-left>div>div{
     height: 200px;
     color: #444;
     font-size: 20px;
+    transition: all .3s;
+
 }
 div#home-main-how-it-works>div.container div.works-body div.works-left>div>div svg{
     width: 45px;
     height: 45px;
     fill: white;
+    transition: all .3s;
+
     /* padding: 50px; */
 
 }
@@ -95,6 +99,17 @@ div#home-main-how-it-works>div.container div.works-body div.works-left>div>div>s
     background-color: #7C4FE0;
     border-radius: 100%;
     padding: 30px;
+    transition: all .3s;
+    border: 2px solid white;
+
+
+}
+div#home-main-how-it-works>div.container div.works-body div.works-left>div>div:hover{
+
+    transition: all .3s;
+    background-color: #7C4FE0;
+    color: white;
+
 }
 
 div#home-main-how-it-works>div.container div.works-body div.works-right{
@@ -120,3 +135,10 @@ div#home-main-how-it-works>div.container div.works-body div.works-right{
     }
     
 }
+@media only screen and (max-width: 579px) {
+    div#home-main-how-it-works>div.container{
+        /* background-color: yellow; */
+        padding: 0 20px;
+    }
+}
+
