@@ -45,8 +45,88 @@ div#home-main-tapesh-facilities>div.container div.facilities-title>hr{
     /* z-index: 1; */
 }
 
+div#home-main-tapesh-facilities>div.container div.facilities-body{
+    /* background-color: red; */
+    height: 432px;
+    margin: 0;
+    margin-top: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.06);
+    color: #444;
+    font-family: 'iransans';
+    font-weight: 300;
 
 
+
+
+}
+div#home-main-tapesh-facilities>div.container div.facilities-body div.facilities-left img{
+    aspect-ratio: 648/432;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+div#home-main-tapesh-facilities>div.container div.facilities-body div.facilities-right{
+    background-image: linear-gradient(270deg,#7C4FE0, #48219e);
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: start;
+    position: relative;
+    height: 100%;
+}
+div#home-main-tapesh-facilities>div.container div.facilities-body div.facilities-right div.fac-title{
+    height: 50px;
+    background-color: #7d4fe000;
+    color: white;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 200;
+}
+div#home-main-tapesh-facilities>div.container div.facilities-body div.facilities-right div.fac-title-show{
+    background-color: white;
+    color: #444;
+    font-weight: 300;
+}   
+div#home-main-tapesh-facilities>div.container div.facilities-body div.facilities-right div.fac-box{
+    position: absolute;
+    top: 50px;
+    padding: 20px;
+    background-color: white;
+    right: 0;
+    height: calc(100% - 50px);
+    /* visibility: hidden; */
+    display: none;
+
+}
+div#home-main-tapesh-facilities>div.container div.facilities-body div.facilities-right div.fac-box-show{
+
+    display: block;
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+    /* div#home-main-tapesh-facilities>div.container div.facilities-body{
+        margin: 0;
+        display: flex;
+        flex-direction: column-reverse;
+        margin-top: 30px;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.06);
+    
+    
+    
+    }     */
+
+}
 @media only screen and (max-width: 632px) {
     
 }
