@@ -96,19 +96,53 @@ div#home-main-tapesh-facilities>div.container div.facilities-body div.facilities
 div#home-main-tapesh-facilities>div.container div.facilities-body div.facilities-right div.fac-box{
     position: absolute;
     top: 50px;
+    width: 100%;
     padding: 20px;
     background-color: white;
     right: 0;
+    overflow-y: scroll;
     height: calc(100% - 50px);
     /* visibility: hidden; */
     display: none;
 
 }
-div#home-main-tapesh-facilities>div.container div.facilities-body div.facilities-right div.fac-box-show{
+div#home-main-tapesh-facilities>div.container div.facilities-body div.facilities-right div.fac-box::-webkit-scrollbar{
+    display: none;
 
+}
+div#home-main-tapesh-facilities>div.container div.facilities-body div.facilities-right div.fac-box-show{
     display: block;
 }
+div#home-main-tapesh-facilities>div.container div.facilities-body div.facilities-right div.fac-box>div{
 
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: start;
+    align-items: start;
+
+}
+div#home-main-tapesh-facilities>div.container div.facilities-body div.facilities-right div.fac-box>div>div.facilities-explain{
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+div#home-main-tapesh-facilities>div.container div.facilities-body div.facilities-right div.fac-box>div>span.facilities-span{
+    font-weight: 200;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+    
+}
+div#home-main-tapesh-facilities>div.container div.facilities-body div.facilities-right div.fac-box>div>span.facilities-span>svg{
+    min-width: 16px;
+    height: 16px;
+
+}
+div#home-main-tapesh-facilities>div.container div.facilities-body div.facilities-right div.fac-box>div>div.new-li-title{
+    padding: 10px 0;
+    font-weight: 300;
+}
 
 
 

@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import DoctorsInfoContext from './context/doctorsInfo';
+import FacilitiesContext from "./context/facilitiesContext";
 
 
 
@@ -12,6 +13,18 @@ import DoctorsInfoContext from './context/doctorsInfo';
 const App = () => {
   const [doctors, setDoctors] = useState([]);
   let [sliderShowDr, setSliderShowDr] = useState([]);
+  const [facilities, setFacilities] = useState([]);
+
+  useEffect(()=>{
+    async function getFacilities(){
+      const response = await axios.get("facilities.json");
+      console.log(response.data);
+      setFacilities(response.data);
+      // setSliderShowDr(response.data[0].img);
+    }
+    getFacilities();
+
+  },[])
   useEffect(() => {
     async function getData(){
         const response = await axios.get("doctors.json");
@@ -34,9 +47,14 @@ const App = () => {
   },[]);
 
   return ( 
-    <DoctorsInfoContext.Provider value={{doctors,setDoctors,sliderShowDr,setSliderShowDr}}>
-      <RootContainer/>
-    </DoctorsInfoContext.Provider>
+    <FacilitiesContext.Provider value={{facilities,setFacilities}}>
+      <DoctorsInfoContext.Provider value={{doctors,setDoctors,sliderShowDr,setSliderShowDr}}>
+        <RootContainer/>
+      </DoctorsInfoContext.Provider>
+    </FacilitiesContext.Provider>
+    // <FacilitiesContext.Provider value={{facilities,setFacilities}}>
+    //   <RootContainer/>
+    // </FacilitiesContext.Provider>
    );
 }
  
