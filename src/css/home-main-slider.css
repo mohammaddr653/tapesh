@@ -1,0 +1,33 @@
+div#home-main-slider-container .slider-container img{
+    aspect-ratio: 1040/377;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+    
+}
+div#home-main-slider-container div.container{
+    border-radius: 5px;
+    overflow: hidden;
+}
+/* div#home-main-slider-container .slider-container span.carousel-control-next-icon,
+div#home-main-slider-container .slider-container span.carousel-control-prev-icon{
+
+    background-color: black;
+    border-radius: 100%;
+    
+
+} */
+@media only screen and (max-width: 579px) {
+    div#home-main-slider-container div.container{
+        border-radius: 0;
+        overflow: hidden;
+    }    
+    div#home-main-slider-container .slider-container img{
+        aspect-ratio: 1040/577;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+        
+    }
+    }
+
