@@ -4,6 +4,7 @@ div#home-main-tapesh-facilities{
 }
 div#home-main-tapesh-facilities>div.container{
     /* background-color: yellow; */
+    padding: 0;
 }
 div#home-main-tapesh-facilities>div.container div.facilities-title{
 
@@ -162,6 +163,10 @@ div#home-main-tapesh-facilities>div.container div.facilities-body div.facilities
 
 }
 @media only screen and (max-width: 632px) {
+    div#home-main-tapesh-facilities>div.container{
+        /* background-color: yellow; */
+        padding: 0 20px;
+    }
     
 }
 @media only screen and (max-width: 579px) {

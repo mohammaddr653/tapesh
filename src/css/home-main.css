@@ -1,5 +1,5 @@
 div#main-container{
-    height:60000px;
+    height:fit-content;
     position: relative;
     /* bottom: 100px; */
     z-index: 1;

@@ -4,6 +4,7 @@ div#home-main-how-it-works{
 }
 div#home-main-how-it-works>div.container{
     /* background-color: yellow; */
+    padding: 0;
 }
 div#home-main-how-it-works>div.container div.works-title{
 
