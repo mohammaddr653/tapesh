@@ -1,0 +1,242 @@
+div#docs-arch-main-container{
+    /* background-color: ; */
+    height:fit-content;
+    margin-top: 100px;
+    position: relative;
+    /* bottom: 100px; */
+    z-index: 1;
+    font-family: 'iransans';
+    font-weight: 300;
+    font-size: 15px;
+    padding: 0;
+    padding-top: 20px;
+
+}
+div#header-container{
+    background-color: white;
+    transition: all .3s;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
+}
+div#header-container div.header-left>div>a{
+
+    color: #333;
+    font-family: 'iransans';
+    font-weight: 300;
+    height:fit-content ;
+    padding: 10px 10px;
+    font-size: 15px;
+    /* background-color: red; */
+    text-shadow: none;
+
+
+
+}
+div#header-container div.header-left>div.header-account{
+    color: #333;
+    font-family: 'iransans';
+    font-weight: 300;
+    height:fit-content ;
+    padding: 10px 10px;
+    font-size: 15px;
+    /* background-color: red; */
+    text-shadow: none;
+
+
+}
+
+div#header-container div.header-search-container>div.search-box{
+    box-shadow: 0 0 2px .5px #999;
+}
+div#header-container div.header-left>div.header-mob-icon>svg{
+    fill:#333 ;
+}
+
+
+
+
+
+
+div#docs-arch-main-container>div.container{
+    padding: 0;
+}
+div#docs-arch-main-container>div.container div.docs-arch-title{
+
+    /* background-color: green; */
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    justify-content: right;
+    align-items: center;
+    color: #333;
+    font-family: 'iransans';
+    font-weight: 300;
+    height:fit-content ;
+    margin-bottom: 20px;
+    padding: 10px 10px;
+    font-size: 15px;
+    /* background-color: red; */
+    text-shadow: none;
+    flex-wrap: nowrap;
+    overflow: hidden;
+
+}
+div#docs-arch-main-container>div.container div.docs-arch-title>h3{
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 300;
+    padding-left:10px ;
+    
+
+}
+div#docs-arch-main-container>div.container div.docs-arch-title>hr{
+    margin: 0;
+
+}
+div#docs-arch-main-container>div.container aside.docs-arch-side{
+    padding: 0;
+    padding-left:20px ;
+    position: sticky;
+    top: 10px;
+    right: 0;
+
+}
+
+div#docs-arch-main-container>div.container div.docs-arch-body{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 10px;
+    row-gap: 10px;
+
+}
+
+div#docs-arch-main-container>div.container div.card{
+
+    background-color: white;
+    padding: 0;
+    position: relative;
+    color: #333;
+    font-family: 'iransans';
+    overflow: hidden;
+    font-weight: 300;
+    /* height:fit-content ; */
+    /* padding: 10px 10px; */
+    font-size: 15px;
+    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.06);
+
+    /* background-color: red; */
+    /* text-shadow: none; */
+
+
+
+}
+div#docs-arch-main-container>div.container div.card span.card-tag{
+    background-color: whitesmoke;
+    padding: 3px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    font-size: 13px;
+    border-radius: 10px;
+    color: #444;
+    font-weight: 200;
+    margin: 0 10px;
+}
+div#docs-arch-main-container>div.container div.card div.card-title>h3{
+    font-size: 16px;
+    padding: 0 10px ;
+
+}
+div#docs-arch-main-container>div.container div.card img.card-img{
+    width: 100%;
+    border-radius: 0;
+    aspect-ratio: 293/195;
+    margin-bottom: 20px;
+
+}
+div#docs-arch-main-container>div.container div.card div.card-explain{
+    /* background-color: red; */
+    padding: 10px;
+    margin-top: 20px;
+}
+div#docs-arch-main-container>div.container div.card div.card-explain>p{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    gap: 5px;
+    font-size: 13px;
+    color: #555;
+    font-weight: 300;
+
+}
+div#docs-arch-main-container>div.container div.card a.card-link{
+    display: block;
+    position: absolute;
+    background-color: #3333336d;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all .3s;
+
+}
+div#docs-arch-main-container>div.container div.card:hover a.card-link{
+
+    opacity: 1;
+    transition: all .3s;
+}
+div#docs-arch-main-container>div.container div.card a.card-link>span{
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    position: absolute;
+    background-color: white;
+    border-radius: 0 10px 10px 0;
+    left: 0;
+    top: 50%;
+    margin-top: -50px;
+}
+
+
+@media only screen and (max-width: 1170px) {
+    div#docs-arch-main-container>div.container div.docs-arch-body{
+        display: grid;
+        grid-template-columns: auto auto auto;
+        column-gap: 10px;
+        row-gap: 10px;
+    
+    }
+    
+}
+
+@media only screen and (max-width: 632px) {
+    div#docs-arch-main-container>div.container div.docs-arch-body{
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 10px;
+        row-gap: 10px;
+    
+    }
+    
+}
+
+@media only screen and (max-width: 579px) {
+    div#docs-arch-main-container>div.container{
+        /* background-color: yellow; */
+        padding: 0 10px;
+    }
+    div#docs-arch-main-container>div.container div.docs-arch-body{
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 10px;
+        row-gap: 10px;
+    
+    }
+}
+
+
+
+

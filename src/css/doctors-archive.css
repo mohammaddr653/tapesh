@@ -10,7 +10,7 @@ body{
 a{
     text-decoration: none;
 }
-div#root-container{
+div#doctors-archive{
     width: 100vw;
     overflow-x: hidden;
 }

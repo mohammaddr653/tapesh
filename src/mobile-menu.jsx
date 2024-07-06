@@ -44,7 +44,7 @@ const MobileMenu = (props) => {
                     <div className="col mob-account-container">
                         {userLoginContext.loginCheck===true ?
                             <div>
-                                <a href="#" className='p-0'>حساب کاربری</a>
+                                <a href="#" className='p-0'>{userLoginContext.loggedInUser.name}</a>
                             </div>
                             : 
                             <>

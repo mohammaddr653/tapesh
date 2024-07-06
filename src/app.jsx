@@ -1,4 +1,4 @@
-import RootContainer from "./rootContainer";
+import HomePage from "./home-page";
 import React from "react";
 import axios from 'axios';
 import { useEffect } from 'react';
@@ -7,6 +7,7 @@ import DoctorsInfoContext from './context/doctorsInfo';
 import FacilitiesContext from "./context/facilitiesContext";
 import UserLoginContext from "./context/userLogin";
 import { Route, Routes } from "react-router-dom";
+import DoctorsArchive from "./doctors-archive";
 
 
 
@@ -67,9 +68,9 @@ const App = () => {
       <FacilitiesContext.Provider value={{facilities,setFacilities}}>
         <DoctorsInfoContext.Provider value={{doctors,setDoctors,sliderShowDr,setSliderShowDr}}>
           <Routes>
-              <Route path="/doctors/:userId" element={<p>fhkjkd</p>}/>
-              <Route path="/doctors" element={<p>d</p>}/>
-              <Route path="/" element={<RootContainer/>}/>
+              <Route path="/doctorsArchive/:userId" element={<p>fhkjkd</p>}/>
+              <Route path="/doctorsArchive" element={<DoctorsArchive/>}/>
+              <Route path="/" element={<HomePage/>}/>
           </Routes>
         </DoctorsInfoContext.Provider>
       </FacilitiesContext.Provider>

@@ -1,11 +1,11 @@
 import Header from "./header";
 import HomeMain from "./home-main";
-import './css/rootContainer.css';
+import './css/home-page.css';
 import Footer from "./footer";
 
-const RootContainer = () => {
+const HomePage = () => {
     return (
-        <div id="root-container">
+        <div id="home-page">
             <Header></Header>
             <HomeMain></HomeMain>
             <Footer></Footer>
@@ -13,4 +13,4 @@ const RootContainer = () => {
     );
 }
  
-export default RootContainer;
+export default HomePage;
