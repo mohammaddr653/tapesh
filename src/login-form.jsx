@@ -8,7 +8,7 @@ import MobMenuContext from './context/mobileMenu';
 import UserLoginContext from './context/userLogin';
 
 const LOGINNAME_REGEX = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-const LOGINPASS_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
+const LOGINPASS_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#*$%]).{8,24}$/;
 const REGISTER_URL = '/register';
 
 const LoginForm = () => {
@@ -22,7 +22,7 @@ const LoginForm = () => {
     const [validLoginName, setValidLoginName] = useState(false);
     const [validLoginPass, setValidLoginPass] = useState(false);
 
-    const [errMsg, setErrMsg] = useState('');
+    const [errMsg, setErrMsg] = useState("");
     const [loginSuccess, setLoginSuccess] = useState(false);
 
 
@@ -46,6 +46,8 @@ const LoginForm = () => {
         if (loginSuccess){
             closingLoginForm();
             alert("welcom");
+            setLoginName("");
+            setLoginPass("");    
         }
     },[loginSuccess])
     
@@ -57,9 +59,7 @@ const LoginForm = () => {
             setErrMsg("مقادیر وارد شده نامعتبر است");
             return;
         }
-        setLoginName("");
-        setLoginPass("");
-        userLoginContext.setLoginCheck(true);
+        checkUserInfo();
     }
     useEffect(()=>{
         if (userLoginContext.loginCheck===true){
@@ -68,6 +68,28 @@ const LoginForm = () => {
         console.log(userLoginContext.loginCheck);
     },[userLoginContext.loginCheck])
     console.log(userLoginContext.usersList);
+    function checkUserInfo(){
+        for(let item of userLoginContext.usersList){
+            console.log(item);
+            let found;
+            if(loginName===item.email){
+                if(loginPass===item.pass){
+                    userLoginContext.setLoggedInUser(item);
+                    userLoginContext.setLoginCheck(true);
+                    found=true;
+                    setErrMsg("");
+                }else{
+                    found="wrong";
+                    setErrMsg("ایمیل یا گذرواژه درست نیست!");
+                }
+            }
+            if(found===true || found==="wrong"){
+                break;
+            }else{
+                setErrMsg("کاربری با این مشخصات یافت نشد !");
+            }
+        }
+    }
 
     return ( 
         <>

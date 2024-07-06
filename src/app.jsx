@@ -15,6 +15,7 @@ import { Route, Routes } from "react-router-dom";
 const App = () => {
   const[loginCheck,setLoginCheck]=useState(false);
   const[usersList,setUsersList]=useState([]);
+  const[loggedInUser,setLoggedInUser]=useState({});
   const [doctors, setDoctors] = useState([]);
   let [sliderShowDr, setSliderShowDr] = useState([]);
   const [facilities, setFacilities] = useState([]);
@@ -62,7 +63,7 @@ const App = () => {
   },[]);
 
   return ( 
-    <UserLoginContext.Provider value={{usersList,setUsersList,loginCheck,setLoginCheck}}>
+    <UserLoginContext.Provider value={{loggedInUser,setLoggedInUser,usersList,setUsersList,loginCheck,setLoginCheck}}>
       <FacilitiesContext.Provider value={{facilities,setFacilities}}>
         <DoctorsInfoContext.Provider value={{doctors,setDoctors,sliderShowDr,setSliderShowDr}}>
           <Routes>

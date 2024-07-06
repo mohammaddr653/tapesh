@@ -79,7 +79,7 @@ const Header = () => {
                                     })}
                                     {userLoginContext.loginCheck===true ?
                                         <div className="header-account d-none d-md-flex">
-                                            <a href="#" className='p-0'>حساب کاربری</a>
+                                            <a href="#" className='p-0'>{userLoginContext.loggedInUser.name}</a>
                                         </div>
                                         : 
                                         <div className="header-account d-none d-md-flex" onClick={function(){setLoginFormState(true)}}>
