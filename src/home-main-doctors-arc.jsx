@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import DoctorsInfoContext from './context/doctorsInfo';
+import { Link } from 'react-router-dom';
 
 const HomeMainDoctorsArc = () => {
     const doctorsInfoContext=useContext(DoctorsInfoContext);
@@ -48,19 +49,19 @@ const HomeMainDoctorsArc = () => {
                                     </div>
 
                                 </div>
-                                <a href="#" className="card-link">
+                                <Link to={`/doctors/${item.id}`} className="card-link">
                                     <span>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-return-right" viewBox="0 0 16 16">
                                             <path fillRule="evenodd" d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5"/>
                                         </svg>
                                     </span>
-                                </a>
+                                </Link>
                             </div>
                         )    
                     })}
                 </div>
                 <div className="row w-100 p-0 see-all-row">
-                    <a href="#">مشاهده تمام پزشکان تپش</a>
+                    <Link to={`/doctors`}>مشاهده تمام پزشکان تپش</Link>
                 </div>
             </div>
         </div>

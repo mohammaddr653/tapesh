@@ -5,15 +5,30 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import DoctorsInfoContext from './context/doctorsInfo';
 import FacilitiesContext from "./context/facilitiesContext";
+import UserLoginContext from "./context/userLogin";
+import { Route, Routes } from "react-router-dom";
 
 
 
 
 
 const App = () => {
+  const[loginCheck,setLoginCheck]=useState(false);
+  const[usersList,setUsersList]=useState([]);
   const [doctors, setDoctors] = useState([]);
   let [sliderShowDr, setSliderShowDr] = useState([]);
   const [facilities, setFacilities] = useState([]);
+
+  useEffect(()=>{
+    async function getUsersList(){
+      const response = await axios.get("usersList.json");
+      console.log(response.data);
+      setUsersList(response.data);
+      // setSliderShowDr(response.data[0].img);
+    }
+    getUsersList();
+
+  },[])
 
   useEffect(()=>{
     async function getFacilities(){
@@ -47,11 +62,18 @@ const App = () => {
   },[]);
 
   return ( 
-    <FacilitiesContext.Provider value={{facilities,setFacilities}}>
-      <DoctorsInfoContext.Provider value={{doctors,setDoctors,sliderShowDr,setSliderShowDr}}>
-        <RootContainer/>
-      </DoctorsInfoContext.Provider>
-    </FacilitiesContext.Provider>
+    <UserLoginContext.Provider value={{usersList,setUsersList,loginCheck,setLoginCheck}}>
+      <FacilitiesContext.Provider value={{facilities,setFacilities}}>
+        <DoctorsInfoContext.Provider value={{doctors,setDoctors,sliderShowDr,setSliderShowDr}}>
+          <Routes>
+              <Route path="/doctors/:userId" element={<p>fhkjkd</p>}/>
+              <Route path="/doctors" element={<p>d</p>}/>
+              <Route path="/" element={<RootContainer/>}/>
+          </Routes>
+        </DoctorsInfoContext.Provider>
+      </FacilitiesContext.Provider>
+    </UserLoginContext.Provider>
+
     // <FacilitiesContext.Provider value={{facilities,setFacilities}}>
     //   <RootContainer/>
     // </FacilitiesContext.Provider>

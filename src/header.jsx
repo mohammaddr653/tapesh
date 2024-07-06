@@ -8,7 +8,11 @@ import { useState } from 'react';
 import MobMenuContext from './context/mobileMenu';
 import LoginForm from './login-form';
 import RegisterForm from './register-form';
+import { useContext } from 'react';
+import UserLoginContext from './context/userLogin';
+
 const Header = () => {
+    let userLoginContext=useContext(UserLoginContext);
     let body=document.getElementsByTagName("body")[0];
     const [headerCon, setHeaderCon] = useState([]);
     let [mobIconClicked, setMobIconClicked] = useState(false);
@@ -73,9 +77,15 @@ const Header = () => {
                                             </div>
                                         )
                                     })}
-                                    <div className="header-account d-none d-md-flex" onClick={function(){setLoginFormState(true)}}>
-                                        <span>ورود | ثبت نام</span>
-                                    </div>
+                                    {userLoginContext.loginCheck===true ?
+                                        <div className="header-account d-none d-md-flex">
+                                            <a href="#" className='p-0'>حساب کاربری</a>
+                                        </div>
+                                        : 
+                                        <div className="header-account d-none d-md-flex" onClick={function(){setLoginFormState(true)}}>
+                                            <span>ورود | ثبت نام</span>
+                                        </div>
+                                    }
                                     <div className='d-none d-md-block'><HeaderSearch tagsNum={0}></HeaderSearch></div>
                                 </div>
                             </div>

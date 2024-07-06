@@ -4,9 +4,11 @@ import HeaderSearch from './header-search';
 import { useEffect } from 'react';
 import { useContext } from 'react';
 import MobMenuContext from './context/mobileMenu';
+import UserLoginContext from './context/userLogin';
+
 
 const MobileMenu = (props) => {
-    // let jj=props.mobBoolian;
+    let userLoginContext=useContext(UserLoginContext);
     const mobMenuContext = useContext(MobMenuContext);
     useEffect(() => {
     }, [props.mobBoolian]);
@@ -40,9 +42,17 @@ const MobileMenu = (props) => {
                 </div>
                 <div className='row'>
                     <div className="col mob-account-container">
-                        <span onClick={function(){mobMenuContext.setLoginFormState(true)}}>ورود</span>
-                        |
-                        <span onClick={function(){mobMenuContext.setRegisterFormState(true)}}>ثبت نام</span>
+                        {userLoginContext.loginCheck===true ?
+                            <div>
+                                <a href="#" className='p-0'>حساب کاربری</a>
+                            </div>
+                            : 
+                            <>
+                                <span onClick={function(){mobMenuContext.setLoginFormState(true)}}>ورود</span>
+                                |
+                                <span onClick={function(){mobMenuContext.setRegisterFormState(true)}}>ثبت نام</span>
+                            </>
+                        }
                     </div>
                 </div>
 

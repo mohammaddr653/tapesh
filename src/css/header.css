@@ -32,6 +32,12 @@ div#header-container div.header-left{
     align-items: center;
     gap: 10px;
 }
+div#header-container div.header-left>div{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 div#header-container div.header-left>div>a{
     color: white;
     font-family: 'iransans';

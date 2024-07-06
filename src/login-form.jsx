@@ -5,12 +5,14 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import MobMenuContext from './context/mobileMenu';
+import UserLoginContext from './context/userLogin';
 
 const LOGINNAME_REGEX = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 const LOGINPASS_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const REGISTER_URL = '/register';
 
 const LoginForm = () => {
+    let userLoginContext=useContext(UserLoginContext);
     const mobMenuContext = useContext(MobMenuContext);
     let [loginName, setLoginName] = useState("");
     let [loginPass, setLoginPass] = useState("");
@@ -57,8 +59,16 @@ const LoginForm = () => {
         }
         setLoginName("");
         setLoginPass("");
-        setLoginSuccess(true);
+        userLoginContext.setLoginCheck(true);
     }
+    useEffect(()=>{
+        if (userLoginContext.loginCheck===true){
+            setLoginSuccess(true);
+        }
+        console.log(userLoginContext.loginCheck);
+    },[userLoginContext.loginCheck])
+    console.log(userLoginContext.usersList);
+
     return ( 
         <>
             <div className="login-form-container">
