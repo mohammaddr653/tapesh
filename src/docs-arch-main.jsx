@@ -8,7 +8,38 @@ import DocsArchFilters from './docs-arch-filters';
 import { Link } from 'react-router-dom';
 const DocsArchMain = () => {
     const doctorsInfoContext=useContext(DoctorsInfoContext);
+    useEffect(() => {
+        sideBarStick();
+    },[]);
 
+
+    function sideBarStick(){
+        let docsArchSide = document.getElementsByClassName("docs-arch-side")[0];
+        let archSideWrapper = document.getElementsByClassName("arch-side-wrapper")[0];
+        window.onscroll=()=>{
+            let scrollTop=window.scrollY;
+            let contentHeight=archSideWrapper.getBoundingClientRect().height;
+            let viewHeight=window.innerHeight;
+            let contentTopDistance=archSideWrapper.getBoundingClientRect().top;
+            let asideTopDistance=docsArchSide.getBoundingClientRect().top;
+            let asideHeight=docsArchSide.getBoundingClientRect().height;
+
+            console.log(asideTopDistance,scrollTop);
+            if(asideTopDistance<=100){
+                console.log("smaller");
+                archSideWrapper.style.position="fixed";
+                archSideWrapper.style.top="100px";
+            }else{
+                archSideWrapper.style.position="static";
+
+            }
+            if(asideHeight-100-(-asideTopDistance)<=contentHeight){
+                archSideWrapper.style.position="relative";
+                archSideWrapper.style.top=asideHeight-contentHeight+"px";
+
+            }
+        }
+    }
     return ( 
         <main>
             <div id="docs-arch-main-container" className='container-fluid w-100'>
@@ -18,11 +49,12 @@ const DocsArchMain = () => {
                         <hr />
                     </div>
                     <div className='row docs-arch w-100 m-0 p-0'>
-                        <div className='col-3 p-0 aside-relative'>
-                            <aside className="docs-arch-side">
+
+                        <aside className="col-3 docs-arch-side">
+                            <div className="arch-side-wrapper">
                                 <DocsArchFilters/>
-                            </aside>
-                        </div>
+                            </div>
+                        </aside>
                         <div className="col-9 p-0 docs-arch-body">
                             {doctorsInfoContext.doctors.map((item,index)=>{
                                 return(

@@ -14,13 +14,13 @@ const HomeMainSlider = () => {
             <div className='container'>
                 <div className="row p-0">
                     <Carousel className='p-0 slider-container'>
-                      <Carousel.Item interval={1000}>
+                      <Carousel.Item interval={800}>
                         <img src='images/dr1.jpg'/>
                       </Carousel.Item>
-                      <Carousel.Item interval={500}>
+                      <Carousel.Item interval={800}>
                         <img src='images/dr2.jpg' />
                       </Carousel.Item>
-                      <Carousel.Item>
+                      <Carousel.Item interval={800}>
                         <img src='images/dr3.jpg' />
                       </Carousel.Item>
                     </Carousel>

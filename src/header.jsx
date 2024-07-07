@@ -10,6 +10,7 @@ import LoginForm from './login-form';
 import RegisterForm from './register-form';
 import { useContext } from 'react';
 import UserLoginContext from './context/userLogin';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     let userLoginContext=useContext(UserLoginContext);
@@ -73,7 +74,7 @@ const Header = () => {
                                     {headerCon.map((item,index)=>{
                                         return(
                                             <div key={index}>
-                                                <a href={item.href} className='header-links'>{item.title}</a>
+                                                <Link to={item.href} className='header-links'>{item.title}</Link>
                                             </div>
                                         )
                                     })}
