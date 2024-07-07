@@ -34,6 +34,22 @@ const DocsArchFilters = () => {
                     <label htmlFor="yasin">درمانگاه یاسین</label>
                 </span>
             </div>
+                        <div className='checkbox-filter'>
+                <h4>انتحاب درمانگاه :</h4>
+                <span>
+                    <input type='checkbox' name="amiralmomenin" id="amiralmomenin" />
+                    <label htmlFor="amiralmomenin">درمانگاه امیرالمومنین</label>
+                </span>
+                <span>
+                    <input type="checkbox" name="nezam" id="nezam" />
+                    <label htmlFor="nezam">بیمارستان نظام مافی</label>
+                </span>
+                <span>
+                    <input type="checkbox" name="yasin" id="yasin" />
+                    <label htmlFor="yasin">درمانگاه یاسین</label>
+                </span>
+            </div>
+
         </div>
     );
 }

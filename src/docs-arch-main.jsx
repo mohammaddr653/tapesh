@@ -12,7 +12,6 @@ const DocsArchMain = () => {
         sideBarStick();
     },[]);
 
-
     function sideBarStick(){
         let sidebar = document.getElementsByClassName("docs-arch-side")[0];
         let sidebar_content = document.getElementsByClassName("arch-side-wrapper")[0];
@@ -22,42 +21,53 @@ const DocsArchMain = () => {
             let sidebarTop = sidebar.getBoundingClientRect().top + window.pageYOffset;
             let sidebarHeight=sidebar.getBoundingClientRect().height;
             let contentHeight = sidebar_content.getBoundingClientRect().height;
-   
-            if( scrollTop >= contentHeight - viewportHeight + sidebarTop) {
-               sidebar_content.style.transform = `translateY(-${(contentHeight - viewportHeight + sidebarTop)}px)`;
-               sidebar_content.style.position  = "fixed"; 
-               sidebar_content.style.top  = ""; 
-
-             }
-             else {
-               sidebar_content.style.transform = "";
-               sidebar_content.style.position  = "static"; 
-               sidebar_content.style.top  = ""; 
-
-             }
             //  console.log((sidebar.getBoundingClientRect().top+scrollTop)-(sidebar_content.getBoundingClientRect().top+scrollTop));
             if(contentHeight+sidebarTop>viewportHeight){
-                console.log("larger");
+                if( scrollTop >= contentHeight - viewportHeight + sidebarTop) {
+                    sidebar_content.style.transform = `translateY(-${(contentHeight - viewportHeight + sidebarTop)}px)`;
+                    sidebar_content.style.position  = "fixed"; 
+                    sidebar_content.style.top  = ""; 
+     
+                  }
+                  else {
+                    sidebar_content.style.transform = "";
+                    sidebar_content.style.position  = "static"; 
+                    sidebar_content.style.top  = ""; 
+     
+                  }     
+                // console.log("larger");
                 if(viewportHeight>=sidebarHeight+sidebar.getBoundingClientRect().top){
-                    console.log(sidebarHeight-contentHeight);
+                    // console.log(sidebarHeight-contentHeight);
                     sidebar_content.style.position  = "relative"; 
                     sidebar_content.style.transform = "";
                     sidebar_content.style.top  = sidebarHeight-contentHeight+"px"; 
 
-                    // sidebar_content.style.top  = 300+"px"; 
                 }
             }else{
-                if(scrollTop>=sidebarHeight-contentHeight){
-                    console.log("ff");
+
+                 //   "اون 100 که نوشتم مقدار ارتفاع هدر هست . خودتون تعیین کنید ."     
+                if( scrollTop >= sidebarTop-100) {
+                    // sidebar_content.style.transform = `translateY(-${(contentHeight - viewportHeight + sidebarTop)}px)`;
+                    sidebar_content.style.position  = "fixed"; 
+                    sidebar_content.style.top  = "100px"; 
+                    // console.log("sd");
+     
+                }
+                  else {
+                    sidebar_content.style.transform = "";
+                    sidebar_content.style.position  = "static"; 
+                    sidebar_content.style.top  = ""; 
+     
+                  }
+
+                //   "اون 64 فاصله ای  هست که هدر باید طی کنه تا به سایدبار برسه . خودتون تعیین کنید "     
+                if(scrollTop-64>=sidebarHeight-contentHeight){
+                    // console.log("ff");
                     sidebar_content.style.position  = "relative"; 
                     sidebar_content.style.top  = sidebarHeight-contentHeight+"px"; 
 
                 }
             }
-            //  if(-((sidebar.getBoundingClientRect().top+scrollTop)-(sidebar_content.getBoundingClientRect().top+scrollTop))>=(sidebarHeight-contentHeight)){
-            //     console.log("gg");
-
-            //  }
            }
 
     }
@@ -70,13 +80,12 @@ const DocsArchMain = () => {
                         <hr />
                     </div>
                     <div className='row docs-arch w-100 m-0 p-0'>
-
-                        <aside className="col-3 docs-arch-side">
+                        <aside className=" docs-arch-side">
                             <div className="arch-side-wrapper">
                                 <DocsArchFilters/>
                             </div>
                         </aside>
-                        <div className="col-9 p-0 docs-arch-body">
+                        <div className=" p-0 docs-arch-body">
                             {doctorsInfoContext.doctors.map((item,index)=>{
                                 return(
                                     <div key={index} className="card">
