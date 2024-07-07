@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "./static/css/main.4247d95d.css",
-    "main.js": "./static/js/main.928942c5.js",
-    "static/media/mobile.jpg": "./static/media/mobile.ced0cc2fab545f6e3759.jpg",
-    "static/media/iStock-1179610553-1-e1646406929549.jpg": "./static/media/iStock-1179610553-1-e1646406929549.d832f45bbf9c29773b0e.jpg",
-    "static/media/IRANSansWeb(FaNum)_Light.ttf": "./static/media/IRANSansWeb(FaNum)_Light.3e99a4d54d76ef687a4f.ttf",
-    "static/media/IRANSansWeb(FaNum)_Medium.ttf": "./static/media/IRANSansWeb(FaNum)_Medium.ba77cad06e41efd16bf0.ttf",
-    "static/media/IRANSansWeb(FaNum)_Bold.ttf": "./static/media/IRANSansWeb(FaNum)_Bold.40ce5860f4b35793bc06.ttf",
-    "static/media/IRANSansWeb(FaNum)_UltraLight.ttf": "./static/media/IRANSansWeb(FaNum)_UltraLight.debced95498e985cf493.ttf",
-    "index.html": "./index.html",
-    "main.4247d95d.css.map": "./static/css/main.4247d95d.css.map",
-    "main.928942c5.js.map": "./static/js/main.928942c5.js.map"
+    "main.css": "/tapesh/static/css/main.85aa57f4.css",
+    "main.js": "/tapesh/static/js/main.83d7eb2c.js",
+    "static/media/mobile.jpg": "/tapesh/static/media/mobile.ced0cc2fab545f6e3759.jpg",
+    "static/media/iStock-1179610553-1-e1646406929549.jpg": "/tapesh/static/media/iStock-1179610553-1-e1646406929549.d832f45bbf9c29773b0e.jpg",
+    "static/media/IRANSansWeb(FaNum)_Light.ttf": "/tapesh/static/media/IRANSansWeb(FaNum)_Light.3e99a4d54d76ef687a4f.ttf",
+    "static/media/IRANSansWeb(FaNum)_Medium.ttf": "/tapesh/static/media/IRANSansWeb(FaNum)_Medium.ba77cad06e41efd16bf0.ttf",
+    "static/media/IRANSansWeb(FaNum)_Bold.ttf": "/tapesh/static/media/IRANSansWeb(FaNum)_Bold.40ce5860f4b35793bc06.ttf",
+    "static/media/IRANSansWeb(FaNum)_UltraLight.ttf": "/tapesh/static/media/IRANSansWeb(FaNum)_UltraLight.debced95498e985cf493.ttf",
+    "index.html": "/tapesh/index.html",
+    "main.85aa57f4.css.map": "/tapesh/static/css/main.85aa57f4.css.map",
+    "main.83d7eb2c.js.map": "/tapesh/static/js/main.83d7eb2c.js.map"
   },
   "entrypoints": [
-    "static/css/main.4247d95d.css",
-    "static/js/main.928942c5.js"
+    "static/css/main.85aa57f4.css",
+    "static/js/main.83d7eb2c.js"
   ]
 }
