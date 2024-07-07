@@ -14,31 +14,52 @@ const DocsArchMain = () => {
 
 
     function sideBarStick(){
-        let docsArchSide = document.getElementsByClassName("docs-arch-side")[0];
-        let archSideWrapper = document.getElementsByClassName("arch-side-wrapper")[0];
+        let sidebar = document.getElementsByClassName("docs-arch-side")[0];
+        let sidebar_content = document.getElementsByClassName("arch-side-wrapper")[0];
         window.onscroll=()=>{
-            let scrollTop=window.scrollY;
-            let contentHeight=archSideWrapper.getBoundingClientRect().height;
-            let viewHeight=window.innerHeight;
-            let contentTopDistance=archSideWrapper.getBoundingClientRect().top;
-            let asideTopDistance=docsArchSide.getBoundingClientRect().top;
-            let asideHeight=docsArchSide.getBoundingClientRect().height;
+            let scrollTop = window.scrollY;
+            let viewportHeight = window.innerHeight;
+            let sidebarTop = sidebar.getBoundingClientRect().top + window.pageYOffset;
+            let sidebarHeight=sidebar.getBoundingClientRect().height;
+            let contentHeight = sidebar_content.getBoundingClientRect().height;
+   
+            if( scrollTop >= contentHeight - viewportHeight + sidebarTop) {
+               sidebar_content.style.transform = `translateY(-${(contentHeight - viewportHeight + sidebarTop)}px)`;
+               sidebar_content.style.position  = "fixed"; 
+               sidebar_content.style.top  = ""; 
 
-            console.log(asideTopDistance,scrollTop);
-            if(asideTopDistance<=100){
-                console.log("smaller");
-                archSideWrapper.style.position="fixed";
-                archSideWrapper.style.top="100px";
+             }
+             else {
+               sidebar_content.style.transform = "";
+               sidebar_content.style.position  = "static"; 
+               sidebar_content.style.top  = ""; 
+
+             }
+            //  console.log((sidebar.getBoundingClientRect().top+scrollTop)-(sidebar_content.getBoundingClientRect().top+scrollTop));
+            if(contentHeight+sidebarTop>viewportHeight){
+                console.log("larger");
+                if(viewportHeight>=sidebarHeight+sidebar.getBoundingClientRect().top){
+                    console.log(sidebarHeight-contentHeight);
+                    sidebar_content.style.position  = "relative"; 
+                    sidebar_content.style.transform = "";
+                    sidebar_content.style.top  = sidebarHeight-contentHeight+"px"; 
+
+                    // sidebar_content.style.top  = 300+"px"; 
+                }
             }else{
-                archSideWrapper.style.position="static";
+                if(scrollTop>=sidebarHeight-contentHeight){
+                    console.log("ff");
+                    sidebar_content.style.position  = "relative"; 
+                    sidebar_content.style.top  = sidebarHeight-contentHeight+"px"; 
 
+                }
             }
-            if(asideHeight-100-(-asideTopDistance)<=contentHeight){
-                archSideWrapper.style.position="relative";
-                archSideWrapper.style.top=asideHeight-contentHeight+"px";
+            //  if(-((sidebar.getBoundingClientRect().top+scrollTop)-(sidebar_content.getBoundingClientRect().top+scrollTop))>=(sidebarHeight-contentHeight)){
+            //     console.log("gg");
 
-            }
-        }
+            //  }
+           }
+
     }
     return ( 
         <main>
