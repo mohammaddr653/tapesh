@@ -28,3 +28,8 @@ div.docs-arch-filters div.checkbox-filter>span{
     align-items: center;
     gap: 3px;
 }
+div.docs-arch-filters div.checkbox-filter>span>label{
+    font-weight: 200;
+    font-size: 14px;
+
+}
