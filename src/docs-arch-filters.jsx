@@ -4,12 +4,16 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import DoctorsInfoContext from './context/doctorsInfo';
+import FilteredContext from './context/filtered';
+
 const DocsArchFilters = () => {
     let degree=[];
     let location=[];
     let a=[degree,location];
     const [appliedFilters, setAppliedFilters] = useState([""],[""]);
     const doctorsInfoContext=useContext(DoctorsInfoContext);
+    const filtered=useContext(FilteredContext);
+
     useEffect(() => {
         let inputs=document.querySelectorAll("div.docs-arch-filters div.checkbox-filter>span>input");
         for(let input of inputs){
@@ -55,40 +59,38 @@ const DocsArchFilters = () => {
         }
     },[]);
     useEffect(() => {
-        console.log(appliedFilters);
         checkBoxFilter();
     },[appliedFilters,doctorsInfoContext]);
 
     
     function checkBoxFilter(){
-        let filteredDoctors=[];
-        for(let doctor of doctorsInfoContext.doctors){
-            // console.log(doctor);
-
-            if(appliedFilters[0][0] || appliedFilters[0][1]){
-                for(let appliedDegree of appliedFilters[0][0]){
-                    // console.log(appliedDegree);
-                    let result=doctor.degree.includes(appliedDegree);
-                    if(result===true){
-                        filteredDoctors.push(doctor);
-                        // console.log(doctor.name+" added");
-                        break;
-                    }
-                }
-                for(let appliedLocation of appliedFilters[0][1]){
-                    let result=doctor.location.includes(appliedLocation);
-                    if(result===true && !filteredDoctors.includes(doctor)){
-                        filteredDoctors.push(doctor);
-                        break;
-                    }
-                }
-
+        let filteredDoctors=doctorsInfoContext.doctors;
+        if(appliedFilters[0][0] || appliedFilters[0][1]){
+            if(appliedFilters[0][0].length===0 && appliedFilters[0][1].length===0){
+                filteredDoctors=doctorsInfoContext.doctors;
             }
-
+            else{
+                filteredDoctors=[];
+                for(let doctor of doctorsInfoContext.doctors){
+                    for(let appliedDegree of appliedFilters[0][0]){
+                        let result=doctor.degree.includes(appliedDegree);
+                        if(result===true && !filteredDoctors.includes(doctor)){
+                            filteredDoctors.push(doctor);
+                            break;
+                        }
+                    }
+                    for(let appliedLocation of appliedFilters[0][1]){
+                        let result=doctor.location.includes(appliedLocation);
+                        if(result===true && !filteredDoctors.includes(doctor)){
+                            filteredDoctors.push(doctor);
+                            break;
+                        }
+                    }
+    
+                }    
+            }
         }
-        console.log(filteredDoctors);
-        
-        // doctorsInfoContext.setFilteredDoctors(filteredDoctors);
+        filtered.setFilteredDoctors(filteredDoctors);
     }
     return (
         <div className="docs-arch-filters w-100">
