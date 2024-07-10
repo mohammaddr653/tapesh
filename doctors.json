@@ -7,7 +7,7 @@
       "proffesion":"کودکان و نوزادان",
       "slider":"true",
       "img":"images/dr2.jpg",
-      "degree":"فوق تخصص پزشکی از دانشگاه شهید بهشتی",
+      "degree":["kidney"],
       "phone":"09377372231"
     },
     {
@@ -17,7 +17,7 @@
         "proffesion":"قلب و عروق",
         "slider":"true",
         "img":"images/dr3.jpg",
-        "degree":"فوق تخصص پزشکی از دانشگاه شهید بهشتی",
+        "degree":["inner","kidney"],
         "phone":"09377372231"
 
     },
@@ -28,7 +28,7 @@
       "proffesion":"داخلی",
       "slider":"false",
       "img":"images/dr2.jpg",
-      "degree":"فوق تخصص پزشکی از دانشگاه شهید بهشتی",
+      "degree":["children"],
       "phone":"09377372231"
 
 
@@ -36,7 +36,7 @@
     {
       "id":"4",
       "name": "دکتر سعید قرخلو",
-      "location": "درمانگاه امیرالمومنین",
+      "location": ["amiralmomenin","nezam"],
       "proffesion":"جراح کلیه و مجاری ادراری",
       "slider":"true",
       "img":"images/dr5.jpg",
