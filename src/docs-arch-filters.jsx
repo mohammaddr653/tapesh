@@ -91,6 +91,11 @@ const DocsArchFilters = () => {
             }
         }
         filtered.setFilteredDoctors(filteredDoctors);
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        });
     }
     return (
         <div className="docs-arch-filters w-100">
@@ -110,7 +115,7 @@ const DocsArchFilters = () => {
                 </span>
             </div>
             <div className='checkbox-filter'>
-                <h4>انتحاب درمانگاه :</h4>
+                <h4>انتخاب درمانگاه :</h4>
                 <span>
                     <input type='checkbox' name="amiralmomenin" className='location' id="amiralmomenin"/>
                     <label htmlFor="amiralmomenin">درمانگاه امیرالمومنین</label>

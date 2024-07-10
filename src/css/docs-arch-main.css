@@ -128,7 +128,9 @@ div#docs-arch-main-container>div.container aside.docs-arch-side div.arch-side-wr
 
 div#docs-arch-main-container>div.container div.docs-arch-body{
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(auto-fill,calc(100%/4 - 10px));
+    grid-template-rows: min-content;
+    justify-content: end;
     column-gap: 10px;
     row-gap: 10px;
     width: 75%;
@@ -228,7 +230,8 @@ div#docs-arch-main-container>div.container div.card a.card-link>span{
 @media only screen and (max-width: 1170px) {
     div#docs-arch-main-container>div.container div.docs-arch-body{
         display: grid;
-        grid-template-columns: auto auto auto;
+        grid-template-columns: repeat(auto-fill,calc(100%/3 - 10px));
+        justify-content: end;
         column-gap: 10px;
         row-gap: 10px;
     
@@ -239,7 +242,8 @@ div#docs-arch-main-container>div.container div.card a.card-link>span{
 @media only screen and (max-width: 632px) {
     div#docs-arch-main-container>div.container div.docs-arch-body{
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: repeat(auto-fill,calc(100%/2 - 10px));
+        justify-content: end;
         column-gap: 10px;
         row-gap: 10px;
     
@@ -254,7 +258,8 @@ div#docs-arch-main-container>div.container div.card a.card-link>span{
     }
     div#docs-arch-main-container>div.container div.docs-arch-body{
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: repeat(auto-fill,calc(100%/2 - 10px));
+        justify-content: end;
         column-gap: 10px;
         row-gap: 10px;
     
