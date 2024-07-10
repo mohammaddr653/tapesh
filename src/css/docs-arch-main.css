@@ -1,6 +1,6 @@
 div#docs-arch-main-container{
     /* background-color: ; */
-    height:30000px;
+    height:fit-content;
     margin-top: 100px;
     position: relative;
     /* bottom: 100px; */
