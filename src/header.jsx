@@ -63,7 +63,7 @@ const Header = () => {
                                         <img src="images/logot.png" width={"100px"} alt="k"/>
                                     </a>
                                 </div>
-                                <div className="col header-left">
+                                <div className="col p-0 header-left">
                                     <div className="header-mob-icon">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16"
                                              onClick={function(){setMobIconClicked(true)}}

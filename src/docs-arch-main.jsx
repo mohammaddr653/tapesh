@@ -11,11 +11,21 @@ import FilteredContext from './context/filtered';
 const DocsArchMain = () => {
     const doctorsInfoContext=useContext(DoctorsInfoContext);
     const[filteredDoctors,setFilteredDoctors]=useState([]);
-
+    const[filters,setFilters]=useState("off");
     // console.log(degree+"sahdfkajshfksdf");
     useEffect(() => {
         sideBarStick();
     },[]);
+    function openFilters(){
+        if(filters==="off"){
+            setFilters("on");
+            console.log(filters);
+        }else{
+            setFilters("off");
+            console.log(filters);
+
+        }
+    }
 
     function sideBarStick(){
         let sidebar = document.getElementsByClassName("docs-arch-side")[0];
@@ -26,54 +36,51 @@ const DocsArchMain = () => {
             let sidebarTop = sidebar.getBoundingClientRect().top + window.pageYOffset;
             let sidebarHeight=sidebar.getBoundingClientRect().height;
             let contentHeight = sidebar_content.getBoundingClientRect().height;
-            //  console.log((sidebar.getBoundingClientRect().top+scrollTop)-(sidebar_content.getBoundingClientRect().top+scrollTop));
-            if(contentHeight+sidebarTop>viewportHeight){
-                if( scrollTop >= contentHeight - viewportHeight + sidebarTop) {
-                    sidebar_content.style.transform = `translateY(-${(contentHeight - viewportHeight + sidebarTop)}px)`;
-                    sidebar_content.style.position  = "fixed"; 
-                    sidebar_content.style.top  = ""; 
-     
-                  }
-                  else {
-                    sidebar_content.style.transform = "";
-                    sidebar_content.style.position  = "static"; 
-                    sidebar_content.style.top  = ""; 
-     
-                  }     
-                // console.log("larger");
-                if(viewportHeight>=sidebarHeight+sidebar.getBoundingClientRect().top){
-                    // console.log(sidebarHeight-contentHeight);
-                    sidebar_content.style.position  = "relative"; 
-                    sidebar_content.style.transform = "";
-                    sidebar_content.style.top  = sidebarHeight-contentHeight+"px"; 
-
+            if(window.innerWidth>=1170){
+                if(contentHeight+sidebarTop>viewportHeight){
+                    if( scrollTop >= contentHeight - viewportHeight + sidebarTop) {
+                        sidebar_content.style.transform = `translateY(-${(contentHeight - viewportHeight + sidebarTop)}px)`;
+                        sidebar_content.style.position  = "fixed"; 
+                        sidebar_content.style.top  = ""; 
+         
+                      }
+                      else {
+                        sidebar_content.style.transform = "";
+                        sidebar_content.style.position  = "static"; 
+                        sidebar_content.style.top  = ""; 
+         
+                      }     
+                    if(viewportHeight>=sidebarHeight+sidebar.getBoundingClientRect().top){
+                        sidebar_content.style.position  = "relative"; 
+                        sidebar_content.style.transform = "";
+                        sidebar_content.style.top  = sidebarHeight-contentHeight+"px"; 
+    
+                    }
+                }else{
+    
+                     //   "اون 100 که نوشتم مقدار ارتفاع هدر هست . خودتون تعیین کنید ."     
+                    if( scrollTop >= sidebarTop-100) {
+                        sidebar_content.style.position  = "fixed"; 
+                        sidebar_content.style.top  = "100px"; 
+         
+                    }
+                      else {
+                        sidebar_content.style.transform = "";
+                        sidebar_content.style.position  = "static"; 
+                        sidebar_content.style.top  = ""; 
+         
+                      }
+    
+                    //   "اون 64 فاصله ای  هست که هدر باید طی کنه تا به سایدبار برسه . خودتون تعیین کنید "     
+                    if(scrollTop-64>=sidebarHeight-contentHeight){
+                        sidebar_content.style.position  = "relative"; 
+                        sidebar_content.style.top  = sidebarHeight-contentHeight+"px"; 
+    
+                    }
                 }
-            }else{
-
-                 //   "اون 100 که نوشتم مقدار ارتفاع هدر هست . خودتون تعیین کنید ."     
-                if( scrollTop >= sidebarTop-100) {
-                    // sidebar_content.style.transform = `translateY(-${(contentHeight - viewportHeight + sidebarTop)}px)`;
-                    sidebar_content.style.position  = "fixed"; 
-                    sidebar_content.style.top  = "100px"; 
-                    // console.log("sd");
-     
-                }
-                  else {
-                    sidebar_content.style.transform = "";
-                    sidebar_content.style.position  = "static"; 
-                    sidebar_content.style.top  = ""; 
-     
-                  }
-
-                //   "اون 64 فاصله ای  هست که هدر باید طی کنه تا به سایدبار برسه . خودتون تعیین کنید "     
-                if(scrollTop-64>=sidebarHeight-contentHeight){
-                    // console.log("ff");
-                    sidebar_content.style.position  = "relative"; 
-                    sidebar_content.style.top  = sidebarHeight-contentHeight+"px"; 
-
-                }
+    
             }
-           }
+        }
 
     }
     return ( 
@@ -87,7 +94,11 @@ const DocsArchMain = () => {
                         </div>
                         <div className='row docs-arch w-100 m-0 p-0'>
                             <aside className=" docs-arch-side">
-                                <div className="arch-side-wrapper">
+                                <button className='w-100' onClick={openFilters}>
+                                    <span>فیلتر ها</span>
+                                    <img src="images/chevron-compact-down.svg" className={filters==="on" ? "turn" : "ordinary"} alt="#" />
+                                </button>
+                                <div className={filters==="on" ? "arch-side-wrapper arch-side-wrapper-on" : "arch-side-wrapper"}>
                                     <DocsArchFilters/>
                                 </div>
                             </aside>

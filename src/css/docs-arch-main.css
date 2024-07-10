@@ -116,6 +116,26 @@ div#docs-arch-main-container>div.container aside.docs-arch-side{
     /* overflow-x: hidden; */
 
 }
+div#docs-arch-main-container>div.container aside.docs-arch-side>button{
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 10px 20px;
+}
+div#docs-arch-main-container>div.container aside.docs-arch-side>button>img.ordinary{
+    transform: rotate(0);
+    transition: all .3s;
+
+}
+div#docs-arch-main-container>div.container aside.docs-arch-side>button>img.turn{
+    transform: rotate(180deg);
+    transition: all .3s;
+}
+
 div#docs-arch-main-container>div.container aside.docs-arch-side div.arch-side-wrapper{
     /* background-color: yellow; */
     padding: 5px;
@@ -228,13 +248,61 @@ div#docs-arch-main-container>div.container div.card a.card-link>span{
 
 
 @media only screen and (max-width: 1170px) {
+    div#docs-arch-main-container>div.container aside.docs-arch-side>button{
+        display: flex;
+    }
+    div#docs-arch-main-container>div.container div.docs-arch{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        align-self:normal;
+        gap: 20px;
+    }
+    div#docs-arch-main-container>div.container aside.docs-arch-side{
+        padding: 0;
+        /* padding-left:20px ; */
+        position: relative;
+        overflow: hidden;
+        /* top: 10px; */
+        background-color: white;
+        box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.06);
+    
+        width: 100%;
+        /* border-left:20px solid whitesmoke ; */
+        border-radius: 5px;
+        /* right: 0; */
+        /* overflow-x: hidden; */
+    
+    }
+    div#docs-arch-main-container>div.container aside.docs-arch-side div.arch-side-wrapper{
+        /* background-color: yellow; */
+        padding: 5px;
+        position: static;
+        display: none;
+        height: 0;
+        transition: all 1s;
+
+        /* width: ; */
+        /* top: 0; */
+        /* min-width: fit-content; */
+    
+    }
+    div#docs-arch-main-container>div.container aside.docs-arch-side div.arch-side-wrapper-on{
+        /* transition: all 1s; */
+        display: block;
+        height: fit-content;
+
+    }
+    
     div#docs-arch-main-container>div.container div.docs-arch-body{
         display: grid;
         grid-template-columns: repeat(auto-fill,calc(100%/3 - 10px));
-        justify-content: end;
+        justify-content: space-between;
         column-gap: 10px;
         row-gap: 10px;
-    
+        width: 100%;
+
     }
     
 }
@@ -264,6 +332,17 @@ div#docs-arch-main-container>div.container div.card a.card-link>span{
         row-gap: 10px;
     
     }
+}
+@media only screen and (max-width: 500px) {
+    div#docs-arch-main-container>div.container div.docs-arch-body{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,calc(100%));
+        justify-content: end;
+        column-gap: 10px;
+        row-gap: 10px;
+    
+    }
+
 }
 
 
