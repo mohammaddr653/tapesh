@@ -1,0 +1,52 @@
+div#doc-single-main-container{
+    /* background-color: ; */
+    height:fit-content;
+    margin-top: 100px;
+    position: relative;
+    /* bottom: 100px; */
+    z-index: 1;
+    font-family: 'iransans';
+    font-weight: 300;
+    font-size: 15px;
+    padding: 0;
+    padding-top: 20px;
+
+}
+div#doctor-single-page div#header-container{
+    background-color: white;
+    transition: all .3s;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
+}
+div#doctor-single-page div#header-container div.header-left>div>a{
+
+    color: #333;
+    font-family: 'iransans';
+    font-weight: 300;
+    height:fit-content ;
+    padding: 10px 10px;
+    font-size: 15px;
+    /* background-color: red; */
+    text-shadow: none;
+
+
+
+}
+div#doctor-single-page div#header-container div.header-left>div.header-account{
+    color: #333;
+    font-family: 'iransans';
+    font-weight: 300;
+    height:fit-content ;
+    padding: 10px 10px;
+    font-size: 15px;
+    /* background-color: red; */
+    text-shadow: none;
+
+
+}
+
+div#doctor-single-page div#header-container div.header-search-container>div.search-box{
+    box-shadow: 0 0 2px .5px #999;
+}
+div#doctor-single-page div#header-container div.header-left>div.header-mob-icon>svg{
+    fill:#333 ;
+}
