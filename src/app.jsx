@@ -8,6 +8,7 @@ import FacilitiesContext from "./context/facilitiesContext";
 import UserLoginContext from "./context/userLogin";
 import { Route, Routes } from "react-router-dom";
 import DoctorsArchive from "./doctors-archive";
+import DoctorSinglePage from "./doctor-single-page";
 
 
 
@@ -23,7 +24,7 @@ const App = () => {
 
   useEffect(()=>{
     async function getUsersList(){
-      const response = await axios.get("usersList.json");
+      const response = await axios.get("../usersList.json");
       console.log(response.data);
       setUsersList(response.data);
       // setSliderShowDr(response.data[0].img);
@@ -34,7 +35,7 @@ const App = () => {
 
   useEffect(()=>{
     async function getFacilities(){
-      const response = await axios.get("facilities.json");
+      const response = await axios.get("../facilities.json");
       console.log(response.data);
       setFacilities(response.data);
       // setSliderShowDr(response.data[0].img);
@@ -44,7 +45,7 @@ const App = () => {
   },[])
   useEffect(() => {
     async function getData(){
-        const response = await axios.get("doctors.json");
+        const response = await axios.get("../doctors.json");
         console.log(response.data);
         console.log("hh");
         setDoctors(response.data);
@@ -68,8 +69,10 @@ const App = () => {
       <FacilitiesContext.Provider value={{facilities,setFacilities}}>
         <DoctorsInfoContext.Provider value={{doctors,setDoctors,sliderShowDr,setSliderShowDr}}>
           <Routes>
-              <Route path="/doctorsArchive/:userId" element={<p>fhkjkd</p>}/>
-              <Route path="/doctorsArchive" element={<DoctorsArchive/>}/>
+          <Route path="doctorsArchive/:doctorName" element={<DoctorSinglePage/>}/>
+
+              <Route path="/doctorsArchive" element={<DoctorsArchive/>}>
+              </Route>
               <Route path="/" element={<HomePage/>}/>
           </Routes>
         </DoctorsInfoContext.Provider>

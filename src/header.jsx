@@ -23,7 +23,8 @@ const Header = () => {
     useEffect(() => {
         setScrollOptions();
         async function getData(){
-            const response = await axios.get("headerMenu.json");
+            const response = await axios.get("../headerMenu.json");
+            console.log(response);
             console.log(response.data);
             setHeaderCon(response.data);
 
