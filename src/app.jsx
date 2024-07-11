@@ -69,10 +69,8 @@ const App = () => {
       <FacilitiesContext.Provider value={{facilities,setFacilities}}>
         <DoctorsInfoContext.Provider value={{doctors,setDoctors,sliderShowDr,setSliderShowDr}}>
           <Routes>
-          <Route path="doctorsArchive/:doctorName" element={<DoctorSinglePage/>}/>
-
-              <Route path="/doctorsArchive" element={<DoctorsArchive/>}>
-              </Route>
+              <Route path="doctorsArchive/:id" element={<DoctorSinglePage/>}/>
+              <Route path="/doctorsArchive" element={<DoctorsArchive/>} />
               <Route path="/" element={<HomePage/>}/>
           </Routes>
         </DoctorsInfoContext.Provider>
