@@ -72,7 +72,15 @@ div#header-container div.header-left>div.header-account{
     font-size: 15px;
     /* background-color: red; */
     text-shadow: 1px 1px rgba(0, 0, 0, 0.601);
-    cursor: pointer;
+    /* cursor: pointer; */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+div#header-container div.header-left>div.header-account>span>img{
+    fill: #444;
+
 }
 div#header-container.header-container-change div.header-left>div.header-account{
     color: #333;

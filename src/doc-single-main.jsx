@@ -9,8 +9,13 @@ import { Link } from 'react-router-dom';
 import FilteredContext from './context/filtered';
 import { useParams } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
+import CartContext from './context/cartContext';
+import UserLoginContext from './context/userLogin';
+
 
 const DocSingleMain = () => {
+    let userLoginContext=useContext(UserLoginContext);
+    let cartContext=useContext(CartContext);
     let params = useParams();
     const doctorsInfoContext=useContext(DoctorsInfoContext);
     const [clickedDoc,setClickedDoc]=useState([]);
@@ -84,7 +89,13 @@ const DocSingleMain = () => {
                                     </div>
                                 </div>
                                 <div className='reserve-button w-100'>
-                                    <button>رزرو نوبت</button>
+                                    <button onClick={function (){
+                                        if(userLoginContext.loginCheck===true){
+                                            let a=cartContext.cart;
+                                            a.push(clickedDoc.id);
+                                            cartContext.setCart(a);    
+                                        }
+                                    }}>رزرو نوبت</button>
                                 </div>
                             </div>
                         </div>

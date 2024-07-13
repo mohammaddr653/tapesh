@@ -9,12 +9,15 @@ import UserLoginContext from "./context/userLogin";
 import { Route, Routes } from "react-router-dom";
 import DoctorsArchive from "./doctors-archive";
 import DoctorSinglePage from "./doctor-single-page";
+import UserCart from "./user-cart";
+import CartContext from "./context/cartContext";
 
 
 
 
 
 const App = () => {
+  const[cart,setCart]=useState([]);
   const[loginCheck,setLoginCheck]=useState(false);
   const[usersList,setUsersList]=useState([]);
   const[loggedInUser,setLoggedInUser]=useState({});
@@ -65,17 +68,20 @@ const App = () => {
   },[]);
 
   return ( 
-    <UserLoginContext.Provider value={{loggedInUser,setLoggedInUser,usersList,setUsersList,loginCheck,setLoginCheck}}>
-      <FacilitiesContext.Provider value={{facilities,setFacilities}}>
-        <DoctorsInfoContext.Provider value={{doctors,setDoctors,sliderShowDr,setSliderShowDr}}>
-          <Routes>
-              <Route path="doctorsArchive/:id" element={<DoctorSinglePage/>}/>
-              <Route path="/doctorsArchive" element={<DoctorsArchive/>} />
-              <Route path="/" element={<HomePage/>}/>
-          </Routes>
-        </DoctorsInfoContext.Provider>
-      </FacilitiesContext.Provider>
-    </UserLoginContext.Provider>
+    <CartContext.Provider value={{cart,setCart}}>
+      <UserLoginContext.Provider value={{loggedInUser,setLoggedInUser,usersList,setUsersList,loginCheck,setLoginCheck}}>
+        <FacilitiesContext.Provider value={{facilities,setFacilities}}>
+          <DoctorsInfoContext.Provider value={{doctors,setDoctors,sliderShowDr,setSliderShowDr}}>
+            <Routes>
+                <Route path="doctorsArchive/:id" element={<DoctorSinglePage/>}/>
+                <Route path="/doctorsArchive" element={<DoctorsArchive/>} />
+                <Route path="/userCart" element={<UserCart/>}/>
+                <Route path="/" element={<HomePage/>}/>
+            </Routes>
+          </DoctorsInfoContext.Provider>
+        </FacilitiesContext.Provider>
+      </UserLoginContext.Provider>
+    </CartContext.Provider>
 
     // <FacilitiesContext.Provider value={{facilities,setFacilities}}>
     //   <RootContainer/>

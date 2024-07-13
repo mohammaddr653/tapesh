@@ -45,7 +45,7 @@ const LoginForm = () => {
     useEffect(()=>{
         if (loginSuccess){
             closingLoginForm();
-            alert("welcom");
+            console.log("welcom");
             setLoginName("");
             setLoginPass("");    
         }

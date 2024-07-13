@@ -82,7 +82,13 @@ const Header = () => {
                                     {userLoginContext.loginCheck===true ?
                                         <div className="header-account d-none d-md-flex">
                                             <a href="#" className='p-0'>{userLoginContext.loggedInUser.name}</a>
+                                            |
+                                            <Link to={`/userCart`} className='d-flex gap-1 p-0' role='button'>
+                                                <img src="../images/alarm.svg" alt="#" />
+                                                نوبت ها
+                                            </Link>
                                         </div>
+                                        
                                         : 
                                         <div className="header-account d-none d-md-flex" onClick={function(){setLoginFormState(true)}}>
                                             <span>ورود | ثبت نام</span>
