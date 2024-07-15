@@ -78,10 +78,6 @@ div#header-container div.header-left>div.header-account{
     align-items: center;
     gap: 10px;
 }
-div#header-container div.header-left>div.header-account>span>img{
-    fill: #444;
-
-}
 div#header-container.header-container-change div.header-left>div.header-account{
     color: #333;
     font-family: 'iransans';
@@ -94,6 +90,15 @@ div#header-container.header-container-change div.header-left>div.header-account{
 
 
 }
+div#header-container div.header-left>div.header-account>a>svg{
+    fill: white;
+
+}
+div#header-container.header-container-change div.header-left>div.header-account>a>svg{
+    fill: #333;
+
+}
+
 
 div#header-container.header-container-change div.header-search-container>div.search-box{
     box-shadow: 0 0 2px .5px #999;
