@@ -122,12 +122,12 @@ const UserCartMain = () => {
     useEffect(()=>{
         console.log(cartContext.cart)
     },[cartContext.cart])
-
     function jj(e){
         let li=e.target.parentElement.parentElement;
         console.log("li is : ")
         console.log(li);
-        let span=li.ch;
+        // let span=li.children[0];
+        let span=li.querySelector("input.list-span");
         let a=cartContext.cart;
         for(let object of a){
             let objectVal=parseInt(object.id);
@@ -174,17 +174,60 @@ const UserCartMain = () => {
                                                 <button className='bg-success text-light rounded p-1 px-2 border-0 increase' onClick={function(e){
                                                     console.log(e.target.parentElement.parentElement);
                                                     let li=e.target.parentElement.parentElement;
-                                                    let counter=li.children[2].children[2];
-                                                    counter.value=parseInt(counter.value)+1;
+                                                    let counter=li.querySelector("input.counter");
+                                                    let span=li.querySelector("input.list-span");
+                                                    let a=cartContext.cart;
+                                                    for(let object of a){
+                                                        let objectVal=parseInt(object.id);
+                                                        let spanVal=parseInt(span.value);
+                                            
+                                                        if(objectVal===spanVal){
+                                            
+                                                            let index = a.indexOf(object);
+                                                            a[index].count=parseInt(a[index].count)+1;
+                                                            console.log("a is this : ");
+                                                            console.log(a);
+                                                            cartContext.setCart(()=>{
+                                                                let t=[...a];
+                                                                return t;
+                                                            }
+                                                            );
+                                            
+                                                        }
+                                                        
+                                                    }                                                
 
                                                 }}>+</button>
-                                                <input type='text' className='counter border px-2 p-1 rounded' defaultValue={item.count}></input>
+                                                <input type='text' className='counter border px-2 p-1 rounded' value={item.count} readOnly></input>
                                                 <button className='bg-warning text-light rounded p-1 px-2 border-0 decrease' onClick={function(e){
                                                     console.log(e.target.parentElement.parentElement);
                                                     let li=e.target.parentElement.parentElement;
-                                                    let counter=li.children[2].children[2];
+                                                    let counter=li.querySelector("input.counter");
                                                     if(parseInt(counter.value)>1){
-                                                        counter.value=parseInt(counter.value)-1;
+                                                        // counter.value=parseInt(counter.value)-1;
+                                                        let span=li.querySelector("input.list-span");
+                                                        let a=cartContext.cart;
+                                                        for(let object of a){
+                                                            let objectVal=parseInt(object.id);
+                                                            let spanVal=parseInt(span.value);
+                                                
+                                                            if(objectVal===spanVal){
+                                                
+                                                                let index = a.indexOf(object);
+                                                                a[index].count=parseInt(a[index].count)-1;
+                                                                console.log("a is this : ");
+                                                                console.log(a);
+                                                                cartContext.setCart(()=>{
+                                                                    let t=[...a];
+                                                                    return t;
+                                                                }
+                                                                );
+                                                
+                                                            }
+                                                            
+                                                        }                                                
+                                                    }else{
+                                                        jj(e);
                                                     }
                                                 }}>-</button>
                                                 <button className='bg-danger text-light delete' onClick={function(e){
