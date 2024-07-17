@@ -92,8 +92,26 @@ const DocSingleMain = () => {
                                     <button onClick={function (){
                                         if(userLoginContext.loginCheck===true){
                                             let a=cartContext.cart;
-                                            a.push(clickedDoc.id);
-                                            cartContext.setCart(a);    
+                                            let repeatState=true;
+                                            for(let x of a){
+                                                if(x.id===clickedDoc.id){
+                                                    console.log("repeated");
+                                                    x.count +=1;
+                                                    repeatState=false;
+                                                    console.log(a);
+                                                }
+                                            }
+                                            if(repeatState===true){
+                                                a.push({
+                                                    id:clickedDoc.id,
+                                                    name:clickedDoc.name,
+                                                    img:clickedDoc.img,
+                                                    price:123000,
+                                                    count:1
+                                                });
+                                                console.log(cartContext.cart);
+                                                cartContext.setCart(a);      
+                                            }
                                         }
                                     }}>رزرو نوبت</button>
                                 </div>
