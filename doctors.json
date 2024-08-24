@@ -6,7 +6,7 @@
       "location": "درمانگاه امیرالمومنین",
       "proffesion":"کودکان و نوزادان",
       "slider":"true",
-      "img":"../images/dr2.jpg",
+      "img":"./images/dr2.jpg",
       "degree":["kidney"],
       "price":"123000",
       "phone":"09377372231"
@@ -17,7 +17,7 @@
         "location": "درمانگاه امیرالمومنین",
         "proffesion":"قلب و عروق",
         "slider":"true",
-        "img":"../images/dr3.jpg",
+        "img":"./images/dr3.jpg",
         "degree":["inner","kidney"],
         "price":"154000",
         "phone":"09377372231"
@@ -29,7 +29,7 @@
       "location": "درمانگاه امیرالمومنین",
       "proffesion":"داخلی",
       "slider":"false",
-      "img":"../images/dr2.jpg",
+      "img":"./images/dr2.jpg",
       "degree":["children"],
       "price":"114000",
       "phone":"09377372231"
@@ -42,7 +42,7 @@
       "location": ["amiralmomenin","nezam"],
       "proffesion":"جراح کلیه و مجاری ادراری",
       "slider":"true",
-      "img":"../images/dr5.jpg",
+      "img":"./images/dr5.jpg",
       "degree":"فوق تخصص پزشکی از دانشگاه شهید بهشتی",
       "price":"104000",
       "phone":"09377372231"
@@ -55,7 +55,7 @@
       "location": "درمانگاه امیرالمومنین",
       "proffesion":"جراح کلیه و مجاری ادراری",
       "slider":"false",
-      "img":"../images/dr2.jpg",
+      "img":"./images/dr2.jpg",
       "degree":"فوق تخصص پزشکی از دانشگاه شهید بهشتی",
       "price":"164000",
       "phone":"09377372231"
@@ -68,7 +68,7 @@
       "location": "درمانگاه امیرالمومنین",
       "proffesion":"جراح کلیه و مجاری ادراری",
       "slider":"true",
-      "img":"../images/dr6.jpg",
+      "img":"./images/dr6.jpg",
       "degree":"فوق تخصص پزشکی از دانشگاه شهید بهشتی",
       "price":"125000",
       "phone":"09377372231"
@@ -82,7 +82,7 @@
       "location": "درمانگاه امیرالمومنین",
       "proffesion":"جراح کلیه و مجاری ادراری",
       "slider":"false",
-      "img":"../images/dr2.jpg",
+      "img":"./images/dr2.jpg",
       "degree":"فوق تخصص پزشکی از دانشگاه شهید بهشتی",
       "price":"114000",
       "phone":"09377372231"
@@ -96,7 +96,7 @@
       "location": "درمانگاه امیرالمومنین",
       "proffesion":"جراح کلیه و مجاری ادراری",
       "slider":"false",
-      "img":"../images/dr2.jpg",
+      "img":"./images/dr2.jpg",
       "degree":"فوق تخصص پزشکی از دانشگاه شهید بهشتی",
       "price":"134000",
       "phone":"09377372231"
